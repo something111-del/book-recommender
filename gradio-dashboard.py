@@ -19,10 +19,8 @@ books["large_thumbnail"] = np.where(
     books["large_thumbnail"],
 )
 
-raw_documents = TextLoader("tagged_description.txt").load()
-text_splitter = CharacterTextSplitter(separator="\n", chunk_size=0, chunk_overlap=0)
-documents = text_splitter.split_documents(raw_documents)
-db_books = Chroma.from_documents(documents, OpenAIEmbeddings())
+# Load pre-initialized vector database
+db_books = Chroma(persist_directory="./data/chroma_db", embedding_function=OpenAIEmbeddings())
 
 
 def retrieve_semantic_recommendations(
@@ -84,7 +82,7 @@ def recommend_books(
 categories = ["All"] + sorted(books["simple_categories"].unique())
 tones = ["All"] + ["Happy", "Surprising", "Angry", "Suspenseful", "Sad"]
 
-with gr.Blocks(theme = gr.themes.Glass()) as dashboard:
+with gr.Blocks() as dashboard:
     gr.Markdown("# Semantic book recommender")
 
     with gr.Row():
@@ -103,4 +101,4 @@ with gr.Blocks(theme = gr.themes.Glass()) as dashboard:
 
 
 if __name__ == "__main__":
-    dashboard.launch()
+    dashboard.launch(share=True)

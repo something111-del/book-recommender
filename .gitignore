@@ -26,31 +26,7 @@ venv/
 ENV/
 env/
 
-# Environment Variables
-.env
-.env.local
-
-# Jupyter Notebook
-.ipynb_checkpoints
-notebooks/executed/
-*.nbconvert.ipynb
-
-# Data Files (large files)
-data/raw/*.csv
-data/processed/*.csv
-outputs/*.csv
-*.csv
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-
-# Model Cache
-.cache/
-*.pt
-*.pth
-*.bin
-*.onnx
-
-# IDE
+# IDEs
 .vscode/
 .idea/
 *.swp
@@ -58,16 +34,36 @@ outputs/*.csv
 *~
 .DS_Store
 
+# Jupyter Notebook
+.ipynb_checkpoints
+notebooks/executed/
+
+# Environment variables
+.env
+
+# Large data files (exclude from GitHub, download separately)
+data/chroma_db/
+*.csv
+*.txt
+!requirements.txt
+!README.md
+
+# Model caches
+.cache/
+transformers_cache/
+
+# Gradio
+.gradio/
+flagged/
+
 # Logs
 *.log
-logs/
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-data/chroma_db/
 
 # OS
-Thumbs.db
 .DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
