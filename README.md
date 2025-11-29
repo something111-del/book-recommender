@@ -8,7 +8,7 @@ An intelligent book recommendation system powered by **semantic search**, **zero
 
 ## � Live Demo
 
-**Try it now**: [Hugging Face Spaces Demo](https://huggingface.co/spaces/YOUR_USERNAME/book-recommender)
+**Try it now**: [Hugging Face Spaces Demo](https://huggingface.co/spaces/something111-del/book-recommender)
 
 Experience the full semantic search and sentiment analysis features powered by OpenAI embeddings - no setup required!
 
