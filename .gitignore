@@ -42,7 +42,7 @@ notebooks/executed/
 .env
 
 # Large data files (exclude from GitHub, download separately)
-data/chroma_db/
+#
 *.csv
 *.txt
 !requirements.txt
